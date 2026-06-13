@@ -9,166 +9,173 @@
 <meta property="og:image" content="./assets/images/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
+<body id="top">
 
 <!-- ================= HEADER ================= -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
-    <a class="logo" href="#top" aria-label="Frolab home">
-      <span class="logo-mark"></span>
-      <span class="logo-word">Frolab</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn btn-light" href="#contact">
-      Get In Touch <span class="arrow" aria-hidden="true">↗</span>
-    </a>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+    <a class="logo" href="#top" aria-label="Frolab home"><span class="slash">//</span> FROLAB</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
+<!-- fullscreen menu overlay -->
+<div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="Close menu">✕</button>
+  <nav class="menu-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">Team</a>
+    <a href="#faq">Blog</a>
+    <a href="#contact">Career</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main>
 
   <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="container">
-      <span class="eyebrow reveal" data-anim="fade">[ Less Noise • More Impact ]</span>
-      <h1 class="hero-title">
-        <span class="reveal" data-anim="up" style="--d:.05s">We Turn</span>
-        <span class="reveal" data-anim="up" style="--d:.15s">Traffic Into <em>Revenue</em></span>
-      </h1>
-      <p class="hero-sub reveal" data-anim="up" style="--d:.3s">
-        Frolab is a creative design &amp; development studio crafting bold digital
-        experiences. We build websites, products and brands that don't just impress — they perform.
-      </p>
-      <div class="hero-cta reveal" data-anim="up" style="--d:.4s">
-        <a class="btn btn-accent" href="#contact">Get In Touch <span class="arrow">↗</span></a>
-        <a class="btn btn-ghost" href="#work">View Our Work <span class="arrow">↗</span></a>
-      </div>
+    <div class="container hero-inner">
+      <span class="eyebrow reveal" data-anim="fade">&bull;&nbsp;&nbsp;Growth Design Studio&nbsp;&nbsp;&bull;</span>
+      <h1 class="hero-title reveal" data-anim="up" style="--d:.05s">We Turn Traffic<br>Into Revenue</h1>
+      <p class="hero-sub reveal" data-anim="up" style="--d:.18s">We design digital experiences that don't just look good — they drive action, increase conversions, and scale with your business.</p>
+      <a class="btn btn-dark reveal" data-anim="up" style="--d:.28s" href="#contact">Get In Touch <span class="arrow-circle">↗</span></a>
     </div>
-  </section>
 
-  <!-- ================= LOGO TICKER / MARQUEE ================= -->
-  <section class="ticker-section" aria-label="Trusted by">
-    <div class="ticker" id="ticker">
+    <!-- logo ticker -->
+    <div class="ticker reveal" data-anim="fade" style="--d:.4s" aria-label="Trusted by">
       <ul class="ticker-track">
-        <li><img src="./assets/images/hkUO9jufKVJH44efQUYE7yGmvA.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/1JCqUGj3urFAlRcnNpxcvBg68o.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/aKAEO5PgDm0eX3CkrvhWFeENqXE.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/exYOUC3cWazMs6dlZOpbz039aCU.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/hS4sizkU1RuJtXQWIO7F1df8rZg.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/jY2hQ5nigkBX6WN2yhaCa2gJ7I.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/qnoHmMKKm8ygAK6NbHwLPHptiA.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/QB1terlKvyA6XRqbow8HSeUfGc.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/rVgM1DSiKh8r30TVQfslaqqdKTs.svg" alt="Client logo" /></li>
-        <li><img src="./assets/images/X5FQPhblHr68jyRFYzeT3FJyrY.svg" alt="Client logo" /></li>
+        <li><img src="./assets/images/exYOUC3cWazMs6dlZOpbz039aCU.svg" alt="Goodbrand" /></li>
+        <li><img src="./assets/images/qnoHmMKKm8ygAK6NbHwLPHptiA.svg" alt="Greenleaf" /></li>
+        <li><img src="./assets/images/QB1terlKvyA6XRqbow8HSeUfGc.svg" alt="GlobalTech" /></li>
+        <li><img src="./assets/images/1JCqUGj3urFAlRcnNpxcvBg68o.svg" alt="Kinetictech" /></li>
+        <li><img src="./assets/images/X5FQPhblHr68jyRFYzeT3FJyrY.svg" alt="Portangola" /></li>
+        <li><img src="./assets/images/hkUO9jufKVJH44efQUYE7yGmvA.svg" alt="Creativeplus" /></li>
+        <li><img src="./assets/images/aKAEO5PgDm0eX3CkrvhWFeENqXE.svg" alt="Housewings" /></li>
+        <li><img src="./assets/images/jY2hQ5nigkBX6WN2yhaCa2gJ7I.svg" alt="Infolabexpo" /></li>
+        <li><img src="./assets/images/hS4sizkU1RuJtXQWIO7F1df8rZg.svg" alt="Brandmark" /></li>
       </ul>
     </div>
+
+    <!-- hero showreel image -->
+    <div class="container">
+      <div class="hero-media reveal" data-anim="up">
+        <img src="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg" alt="Frolab team at work" />
+        <button class="play" aria-label="Play showreel">▶</button>
+      </div>
+    </div>
   </section>
 
-  <!-- ================= VALUE PROP ================= -->
+  <!-- ================= LESS NOISE ================= -->
+  <section class="section center-band">
+    <div class="container">
+      <h2 class="display reveal" data-anim="up">Less Noise<br>More Impact</h2>
+    </div>
+  </section>
+
+  <!-- ================= OUTCOMES (dark block) ================= -->
   <section class="section" id="about">
-    <div class="container split">
-      <div class="reveal" data-anim="left">
-        <span class="tag tag-coral">About Frolab</span>
-        <h2 class="h2">We Don't Design.<br>We Deliver <em>Outcomes.</em></h2>
-      </div>
-      <div class="reveal" data-anim="up" style="--d:.15s">
-        <p class="lead">
-          From early-stage startups to scaling companies, we partner with teams who care about
-          results. Every pixel is in service of a metric — conversion, retention, revenue.
-          Founded in 2020, we blend bold aesthetics with measurable business impact.
-        </p>
-        <a class="btn btn-line" href="#process">Learn More <span class="arrow">↗</span></a>
+    <div class="container">
+      <div class="outcomes reveal" data-anim="up">
+        <div class="outcomes-copy">
+          <h2 class="h2 light">We Don't Design.<br>We Deliver Outcomes.</h2>
+          <p>From early-stage startups to scaling companies, our work is focused on one thing: results. Not just visuals, but measurable outcomes that drive revenue, engagement, and growth.</p>
+          <a class="btn btn-light" href="#process">Learn More <span class="arrow-circle">↗</span></a>
+        </div>
+        <div class="outcomes-media">
+          <img src="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg" alt="Team collaborating" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ================= STATS ================= -->
-  <section class="section stats-section">
+  <section class="stats-band">
     <div class="container stats">
-      <div class="stat reveal" data-anim="up">
-        <div class="stat-num" data-count="120" data-suffix="K+">0K+</div>
-        <p>Projects shipped across SaaS, e-commerce &amp; high-growth startups</p>
-      </div>
-      <div class="stat reveal" data-anim="up" style="--d:.12s">
-        <div class="stat-num" data-count="48" data-suffix="M+" data-prefix="$">$0M+</div>
-        <p>Revenue driven through conversion-focused design</p>
-      </div>
-      <div class="stat reveal" data-anim="up" style="--d:.24s">
-        <div class="stat-num" data-count="90" data-suffix="K+">0K+</div>
-        <p>Happy clients &amp; long-term partnerships worldwide</p>
-      </div>
+      <div class="stat-card pink reveal" data-anim="up"><b data-count="65" data-suffix="K+">0K+</b><span>Across SaaS, e-commerce and high-growth startups</span></div>
+      <div class="stat-card lime reveal" data-anim="up" style="--d:.1s"><b data-count="50" data-suffix="M+">0M+</b><span>Driven through conversion-focused design decisions</span></div>
+      <div class="stat-card amber reveal" data-anim="up" style="--d:.2s"><b data-count="15" data-suffix="K+">0K+</b><span>Clients helped through design that delivers real results</span></div>
     </div>
   </section>
 
   <!-- ================= SELECTED WORK ================= -->
   <section class="section" id="work">
     <div class="container">
-      <div class="section-head">
-        <span class="tag tag-lime reveal" data-anim="fade">Selected Work</span>
-        <h2 class="h2 reveal" data-anim="up">Work That Drives<br><em>Real Results</em></h2>
+      <div class="head center">
+        <h2 class="h2 reveal" data-anim="up">Selected Work That<br>Drives Real Results</h2>
+        <p class="sub reveal" data-anim="up" style="--d:.1s">We design brands and websites that go beyond aesthetics crafted to perform, convert, and position your business for long-term growth.</p>
       </div>
       <div class="work-grid">
         <a class="work-card reveal" data-anim="up" href="#">
-          <div class="work-img"><img src="./assets/images/CkSakrrmJ9io7ji47VmyaFppqs.png" alt="FinEdge project" loading="lazy" /></div>
-          <div class="work-meta"><h3>FinEdge</h3><span>FinTech / Web3</span><span class="arrow">↗</span></div>
+          <div class="work-img"><img src="./assets/images/MLYl9MeN7A9WNlw01Y5wZAr9xOg.png" alt="FinEdge" loading="lazy" /></div>
+          <div class="work-row"><h3>FinEdge</h3><span class="sq-arrow">↗</span></div>
+          <p>A modern finance website designed to build trust, simplify services, and drive high-quality leads.</p>
+          <div class="chips"><span>FinTech</span><span>Software</span><span>Web3 &amp; Blockchain</span></div>
         </a>
         <a class="work-card reveal" data-anim="up" style="--d:.1s" href="#">
-          <div class="work-img"><img src="./assets/images/uA6mQQnQvl9EqOOs9eNy8UOW5c.png" alt="Scrubex project" loading="lazy" /></div>
-          <div class="work-meta"><h3>Scrubex</h3><span>Automotive</span><span class="arrow">↗</span></div>
-        </a>
-        <a class="work-card reveal" data-anim="up" style="--d:.2s" href="#">
-          <div class="work-img"><img src="./assets/images/XemCR0EWx1ArjghMrgLhN4zcCAM.png" alt="CaterCraftsy project" loading="lazy" /></div>
-          <div class="work-meta"><h3>CaterCraftsy</h3><span>E-commerce</span><span class="arrow">↗</span></div>
+          <div class="work-img"><img src="./assets/images/WAPpEdcVizacu3OXCF4b3eG7TM.png" alt="Scrubex" loading="lazy" /></div>
+          <div class="work-row"><h3>Scrubex</h3><span class="sq-arrow">↗</span></div>
+          <p>A clean, conversion-focused website for a car wash brand designed to simplify booking and build instant trust.</p>
+          <div class="chips"><span>Auto Mobile</span></div>
         </a>
         <a class="work-card reveal" data-anim="up" href="#">
-          <div class="work-img"><img src="./assets/images/Zq6TWJrAbR7HTraHXMDL1CvxbJI.png" alt="OptiGrid project" loading="lazy" /></div>
-          <div class="work-meta"><h3>OptiGrid</h3><span>Software / Energy</span><span class="arrow">↗</span></div>
+          <div class="work-img"><img src="./assets/images/qxJvWifCe7uPIA0uas3dHzWuV6o.jpg" alt="CaterCraftsy" loading="lazy" /></div>
+          <div class="work-row"><h3>CaterCraftsy</h3><span class="sq-arrow">↗</span></div>
+          <p>A streamlined catering app experience designed to simplify vendor selection and boost booking completion.</p>
+          <div class="chips"><span>E-commerce</span></div>
         </a>
         <a class="work-card reveal" data-anim="up" style="--d:.1s" href="#">
-          <div class="work-img"><img src="./assets/images/YOeg8oqmiVYywgPVUOyBQXRxywk.png" alt="PawCare project" loading="lazy" /></div>
-          <div class="work-meta"><h3>PawCare</h3><span>HealthTech</span><span class="arrow">↗</span></div>
+          <div class="work-img"><img src="./assets/images/8X3uw99noefWDTDbkBDQsToRVI.png" alt="OptiGrid" loading="lazy" /></div>
+          <div class="work-row"><h3>OptiGrid</h3><span class="sq-arrow">↗</span></div>
+          <p>A clarity-focused website that simplifies complex energy solutions and drives high-quality enterprise leads.</p>
+          <div class="chips"><span>Software</span></div>
         </a>
-        <a class="work-card reveal" data-anim="up" style="--d:.2s" href="#">
-          <div class="work-img"><img src="./assets/images/igwDH6ropW7lL0dVR5L6uWbaQo.png" alt="Ceprin Healthcare project" loading="lazy" /></div>
-          <div class="work-meta"><h3>Ceprin Healthcare</h3><span>HealthTech</span><span class="arrow">↗</span></div>
+        <a class="work-card reveal" data-anim="up" href="#">
+          <div class="work-img"><img src="./assets/images/waEIqYWyHsxcs60cxzcSfF0.png" alt="PawCare" loading="lazy" /></div>
+          <div class="work-row"><h3>PawCare</h3><span class="sq-arrow">↗</span></div>
+          <p>A warm, trust-driven landing page designed to simplify pet appointment bookings and increase conversions.</p>
+          <div class="chips"><span>HealthTech</span><span>UI UX Design</span></div>
+        </a>
+        <a class="work-card reveal" data-anim="up" style="--d:.1s" href="#">
+          <div class="work-img"><img src="./assets/images/VcnBbLPw9qHxKhIdhh38Py6nE8.jpg" alt="Ceprin Healthcare" loading="lazy" /></div>
+          <div class="work-row"><h3>Ceprin Healthcare</h3><span class="sq-arrow">↗</span></div>
+          <p>A clean, trust-focused healthcare website designed to simplify navigation and drive more patient enquiries.</p>
+          <div class="chips"><span>HealthTech</span></div>
         </a>
       </div>
-      <div class="center reveal" data-anim="up"><a class="btn btn-line" href="#">View More Work <span class="arrow">↗</span></a></div>
+      <div class="center"><a class="btn btn-outline reveal" data-anim="up" href="#">View More Work <span class="arrow-circle">↗</span></a></div>
     </div>
   </section>
 
   <!-- ================= PROCESS ================= -->
-  <section class="section process-section" id="process">
+  <section class="section" id="process">
     <div class="container">
-      <div class="section-head">
-        <span class="tag tag-lavender reveal" data-anim="fade">Our Process</span>
-        <h2 class="h2 reveal" data-anim="up">Where Strategy<br>Meets <em>Design</em></h2>
-      </div>
-      <div class="process-grid">
-        <div class="process-card reveal" data-anim="up">
-          <span class="step">01</span>
-          <h3>Discovery &amp; Strategy</h3>
-          <p>We dig into your vision, market and users to define exactly what success looks like.</p>
+      <div class="process-wrap reveal" data-anim="up">
+        <div class="head center">
+          <h2 class="h2">Where Strategy<br>Meets Design</h2>
+          <p class="sub">A focused process designed to move fast, reduce friction, and deliver work that performs not just looks good.</p>
         </div>
-        <div class="process-card reveal" data-anim="up" style="--d:.12s">
-          <span class="step">02</span>
-          <h3>Craft &amp; Build</h3>
-          <p>We design and engineer scalable, visually striking products built to convert.</p>
+        <div class="process-grid">
+          <div class="process-card"><span class="big-num">1</span><h3>Discovery &amp; Strategy</h3><p>We take time to understand your vision, market, and users building a strong foundation before design begins.</p></div>
+          <div class="process-card hi"><span class="big-num">2</span><h3>Craft &amp; Build</h3><p>We design and develop scalable digital products that are visually striking and functionally strong.</p></div>
+          <div class="process-card"><span class="big-num">3</span><h3>Launch &amp; Evolve</h3><p>We launch with precision and continue refining to help your product grow and perform over time.</p></div>
         </div>
-        <div class="process-card reveal" data-anim="up" style="--d:.24s">
-          <span class="step">03</span>
-          <h3>Launch &amp; Evolve</h3>
-          <p>We ship with precision, then refine continuously based on real performance data.</p>
+        <div class="process-foot">
+          <div class="served">
+            <div class="avatars">
+              <img src="./assets/images/04uQOSatuVwcSepqsIYe6VPLs.jpg" alt="" />
+              <img src="./assets/images/9SyIbZn5VNTGj8CHshZ8qlYcA.jpg" alt="" />
+              <img src="./assets/images/F4W54Mt5LzozDmK0fOsovzcDuAs.webp" alt="" />
+              <img src="./assets/images/KbZr6lh3NCXndBJU4E1Fcqd4.jpg" alt="" />
+            </div>
+            <div><b>16K+</b><span>Clients served</span></div>
+          </div>
+          <a class="btn btn-dark" href="#contact">Contact Us <span class="arrow-circle">↗</span></a>
         </div>
       </div>
     </div>
@@ -177,132 +184,148 @@
   <!-- ================= SERVICES ================= -->
   <section class="section" id="services">
     <div class="container">
-      <div class="section-head">
-        <span class="tag tag-amber reveal" data-anim="fade">Services</span>
-        <h2 class="h2 reveal" data-anim="up">Design That<br><em>Drives Results</em></h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal" data-anim="up">
-          <div class="dot dot-coral"></div>
+      <div class="head"><h2 class="h2 reveal" data-anim="up">Design That<br>Drives Results</h2></div>
+
+      <div class="service lime reveal" data-anim="up">
+        <div class="service-media"><img src="./assets/images/CkSakrrmJ9io7ji47VmyaFppqs.png" alt="UI/UX Design" loading="lazy" /></div>
+        <div class="service-copy">
           <h3>UI/UX Design</h3>
-          <p>Intuitive digital experiences that feel effortless.</p>
-          <ul><li>User Interface</li><li>User Experience</li><li>App Design</li><li>Design Systems</li><li>SaaS &amp; Product</li></ul>
+          <p>We design intuitive, engaging digital experiences built around real user behavior. Each interaction reduces friction, guides users naturally, and drives meaningful actions.</p>
+          <div class="chips"><span>User Interface Design</span><span>User Experience Design</span><span>App Design</span><span>Website Design</span><span>Design Systems</span><span>SaaS &amp; Product Design</span></div>
         </div>
-        <div class="service-card reveal" data-anim="up" style="--d:.1s">
-          <div class="dot dot-pink"></div>
+      </div>
+
+      <div class="service amber reveal" data-anim="up">
+        <div class="service-media"><img src="./assets/images/Zq6TWJrAbR7HTraHXMDL1CvxbJI.png" alt="Graphic Design" loading="lazy" /></div>
+        <div class="service-copy">
           <h3>Graphic Design</h3>
-          <p>Bold brand visuals that demand attention.</p>
-          <ul><li>Brand Identity</li><li>Logo Design</li><li>Social Creatives</li><li>Poster Design</li><li>Packaging</li></ul>
+          <p>We create bold visuals that make your brand stand out and stay memorable. From identity to campaigns, every design is consistent, impactful, and instantly recognizable.</p>
+          <div class="chips"><span>Brand Identity</span><span>Logo Design</span><span>Banner Design</span><span>Social Media Creatives</span><span>Poster Design</span><span>Packaging Design</span></div>
         </div>
-        <div class="service-card reveal" data-anim="up" style="--d:.2s">
-          <div class="dot dot-lime"></div>
+      </div>
+
+      <div class="service lavender reveal" data-anim="up">
+        <div class="service-media"><img src="./assets/images/uA6mQQnQvl9EqOOs9eNy8UOW5c.png" alt="Web Development" loading="lazy" /></div>
+        <div class="service-copy">
           <h3>Web Development</h3>
-          <p>High-performance websites engineered to scale.</p>
-          <ul><li>Framer</li><li>Webflow</li><li>Shopify</li><li>WordPress</li><li>Custom HTML/CSS</li></ul>
+          <p>We build high-performance websites that blend clean design with strong functionality. Every detail is optimized for speed, smooth interactions, and real results.</p>
+          <div class="chips"><span>Framer Development</span><span>Webflow Development</span><span>Shopify Development</span><span>WordPress Development</span><span>Custom HTML/CSS</span><span>Responsive Development</span></div>
         </div>
-        <div class="service-card reveal" data-anim="up" style="--d:.3s">
-          <div class="dot dot-lavender"></div>
+      </div>
+
+      <div class="service coral reveal" data-anim="up">
+        <div class="service-media"><img src="./assets/images/XemCR0EWx1ArjghMrgLhN4zcCAM.png" alt="App Development" loading="lazy" /></div>
+        <div class="service-copy">
           <h3>App Development</h3>
-          <p>Mobile &amp; web apps people love to use.</p>
-          <ul><li>iOS</li><li>Android</li><li>Cross-Platform</li><li>API Integrations</li><li>Optimization</li></ul>
+          <p>We design and build high-performance mobile and web apps that solve real problems, scale with your business, and deliver measurable impact.</p>
+          <div class="chips"><span>iOS &amp; Development</span><span>Android Development</span><span>Cross-Platform Apps</span><span>API Integrations</span><span>App Optimization</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SINCE 2020 ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="since-wrap reveal" data-anim="up">
+        <div class="since-head">
+          <div class="since-mark"><span>Since</span><img src="./assets/images/rVgM1DSiKh8r30TVQfslaqqdKTs.svg" alt="" /><span class="yr">2020</span></div>
+          <p><b>At FROLAB,</b> we design digital experiences that blend bold aesthetics with real business impact. Every project is crafted with intention built to perform, not just impress.</p>
+        </div>
+        <div class="since-photos">
+          <img src="./assets/images/r7nvrtHp7lxFSAFoW45o7hOVPi4.jpg" alt="" loading="lazy" />
+          <img src="./assets/images/tEs5vyNE0ewM8XZCbNnEpwhI.jpg" alt="" loading="lazy" />
+          <img src="./assets/images/3hKKJzdmKSGo7tOkbeneDRtIOQk.webp" alt="" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= TESTIMONIALS ================= -->
-  <section class="section testi-section">
+  <section class="section">
     <div class="container">
-      <div class="section-head">
-        <span class="tag tag-coral reveal" data-anim="fade">Testimonials</span>
-        <h2 class="h2 reveal" data-anim="up">Results That Speak<br>Louder Than <em>Design</em></h2>
+      <div class="head center">
+        <h2 class="h2 reveal" data-anim="up">Results That Speak<br>Louder Than Design</h2>
+        <p class="sub reveal" data-anim="up" style="--d:.1s">We partner with ambitious brands to create experiences that drive real business growth.</p>
       </div>
     </div>
-    <div class="ticker testi-ticker">
-      <ul class="ticker-track" data-speed="55">
-        <li><figure class="testi"><blockquote>“The UX redesign slashed our bounce rate. Conversions followed within weeks.”</blockquote><figcaption><span class="av" style="--c:#ff8f64">DC</span><span><b>Daniel Carter</b>SaaS Startup Founder</span></figcaption></figure></li>
-        <li><figure class="testi"><blockquote>“Our new landing page nearly doubled signups. Frolab just gets conversion.”</blockquote><figcaption><span class="av" style="--c:#b7ff93">AR</span><span><b>Aisha Rahman</b>Marketing Manager</span></figcaption></figure></li>
-        <li><figure class="testi"><blockquote>“Precision execution and total respect for the timeline. Rare and refreshing.”</blockquote><figcaption><span class="av" style="--c:#dca8ff">RM</span><span><b>Ryan Mitchell</b>Product Manager</span></figcaption></figure></li>
-        <li><figure class="testi"><blockquote>“A Webflow site plus a real strategy upgrade. Worth every cent.”</blockquote><figcaption><span class="av" style="--c:#ffcc4e">OB</span><span><b>Olivia Bennett</b>CEO</span></figcaption></figure></li>
-        <li><figure class="testi"><blockquote>“They simplified our SaaS flow and cut support tickets dramatically.”</blockquote><figcaption><span class="av" style="--c:#f8a7ff">AH</span><span><b>Ahmed Hassan</b>Startup Founder</span></figcaption></figure></li>
-      </ul>
+    <div class="testi-cols">
+      <div class="testi-col" data-dir="up">
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>The UX redesign clearly understood our users. Every flow was respected, and the final product exceeded expectations.</blockquote><figcaption><img src="./assets/images/9SyIbZn5VNTGj8CHshZ8qlYcA.jpg" alt=""><span><b>Daniel Carter</b>SaaS Startup Founder</span></figcaption></figure>
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>Our new landing page nearly doubled signups within weeks. Frolab simply gets conversion.</blockquote><figcaption><img src="./assets/images/04uQOSatuVwcSepqsIYe6VPLs.jpg" alt=""><span><b>Aisha Rahman</b>Marketing Manager</span></figcaption></figure>
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>We hired them for a Webflow site and ended up getting a full strategy upgrade. Fast, responsive and worth every cent.</blockquote><figcaption><img src="./assets/images/KbZr6lh3NCXndBJU4E1Fcqd4.jpg" alt=""><span><b>Olivia Bennett</b>CEO</span></figcaption></figure>
+      </div>
+      <div class="testi-col" data-dir="down">
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>Precision execution and total respect for the timeline. The performance-optimized build was exactly what we needed.</blockquote><figcaption><img src="./assets/images/cnqxN5KMiiF9XHiBTa2EFLgxlc.jpg" alt=""><span><b>Ryan Mitchell</b>Product Manager</span></figcaption></figure>
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>They simplified our SaaS flow and dropped support tickets dramatically. Clean, user-first thinking throughout.</blockquote><figcaption><img src="./assets/images/evyyx93nWVrH76vcvSIDIEO9kI.jpg" alt=""><span><b>Ahmed Hassan</b>Startup Founder</span></figcaption></figure>
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>What stood out most was their ability to think like a user. Every decision had a reason behind it — real problem solving.</blockquote><figcaption><img src="./assets/images/gLsAUBQP8znqpPeHwDaNhEYs4.jpg" alt=""><span><b>Sophia Turner</b>SaaS Business</span></figcaption></figure>
+      </div>
+      <div class="testi-col third" data-dir="up">
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>We delivered an MVP fast, and they delivered without cutting corners. Clean UI, functional and ready to scale.</blockquote><figcaption><img src="./assets/images/ZtveNzQGClhieiyg21uN23maFqo.jpg" alt=""><span><b>Liam Anderson</b>Operations Manager</span></figcaption></figure>
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>If you're looking for a team that understands both design and business impact, this is it. They turned our ideas into something that converts.</blockquote><figcaption><img src="./assets/images/RQGURXba62jRvCYWdWvMxa5dyQ.jpg" alt=""><span><b>Noah Wilson</b>Founder, Online Service</span></figcaption></figure>
+        <figure class="testi"><div class="stars">★★★★★</div><blockquote>They gave our startup a premium identity from day one. The branding finally matches our ambition.</blockquote><figcaption><img src="./assets/images/Rse6Bh6yh93hBjTAdyFK3csvH8.jpg" alt=""><span><b>Fatima Khan</b>Brand Strategist</span></figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <!-- ================= AWARDS ================= -->
-  <section class="section">
+  <!-- ================= AWARDS (dark) ================= -->
+  <section class="awards-band">
     <div class="container">
-      <div class="section-head">
-        <span class="tag tag-lime reveal" data-anim="fade">Recognition</span>
-        <h2 class="h2 reveal" data-anim="up">Awards &amp; <em>Recognition</em></h2>
+      <div class="head center">
+        <h2 class="h2 light reveal" data-anim="up">Awards &amp;<br>Recognition</h2>
+        <p class="sub light reveal" data-anim="up" style="--d:.1s">Featured and awarded by industry leaders for excellence in digital craftsmanship.</p>
       </div>
-      <ul class="awards">
-        <li class="reveal" data-anim="up"><span>2025</span><b>Elite Dev Awards</b><i>High-quality digital product engineering</i><span class="arrow">↗</span></li>
-        <li class="reveal" data-anim="up" style="--d:.08s"><span>2024</span><b>New York Design Awards</b><i>Excellence in digital design</i><span class="arrow">↗</span></li>
-        <li class="reveal" data-anim="up" style="--d:.16s"><span>2023</span><b>Envato Author Awards</b><i>Top-selling digital products</i><span class="arrow">↗</span></li>
-        <li class="reveal" data-anim="up" style="--d:.24s"><span>2022</span><b>Global Design Awards</b><i>User-focused design balance</i><span class="arrow">↗</span></li>
-      </ul>
+      <div class="awards-grid reveal" data-anim="up">
+        <ul class="awards-acc">
+          <li class="aw pink open"><button>Elite Dev Awards <em>2025</em></button><div class="aw-body"><p>Awarded for engineering high-quality digital products with exceptional performance, scalability, and user-focused design.</p></div></li>
+          <li class="aw lime"><button>New York Design Awards <em>2024</em></button><div class="aw-body"><p>Recognized for outstanding excellence and innovation in digital design.</p></div></li>
+          <li class="aw amber"><button>Envato Author Awards <em>2023</em></button><div class="aw-body"><p>Honored as a top-selling author of premium digital products.</p></div></li>
+          <li class="aw coral"><button>Global Design Awards <em>2022</em></button><div class="aw-body"><p>Awarded for a balanced, user-focused approach to digital design.</p></div></li>
+        </ul>
+        <div class="awards-photo"><img src="./assets/images/igwDH6ropW7lL0dVR5L6uWbaQo.png" alt="Frolab team receiving an award" loading="lazy" /></div>
+      </div>
     </div>
   </section>
 
   <!-- ================= FAQ ================= -->
   <section class="section" id="faq">
     <div class="container narrow">
-      <div class="section-head center">
-        <span class="tag tag-lavender reveal" data-anim="fade">FAQ</span>
-        <h2 class="h2 reveal" data-anim="up">Frequently Asked<br><em>Questions</em></h2>
+      <div class="head center">
+        <h2 class="display reveal" data-anim="up">Frequently<br>Asked Questions</h2>
+        <p class="sub reveal" data-anim="up" style="--d:.1s">We value transparency as much as great design. These answers help you understand our process and what to expect.</p>
       </div>
       <div class="faq">
-        <div class="faq-item reveal" data-anim="up">
-          <button class="faq-q">What services do you offer? <span class="chev">+</span></button>
-          <div class="faq-a"><p>UI/UX design, graphic design, web development and app development — strategy through launch.</p></div>
-        </div>
-        <div class="faq-item reveal" data-anim="up" style="--d:.06s">
-          <button class="faq-q">How do you approach conversion design? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Every decision maps to a metric. We research, prototype, test and iterate against real user behaviour.</p></div>
-        </div>
-        <div class="faq-item reveal" data-anim="up" style="--d:.12s">
-          <button class="faq-q">What are typical project timelines? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Landing pages run 1–3 weeks; full products 6–12 weeks depending on scope and complexity.</p></div>
-        </div>
-        <div class="faq-item reveal" data-anim="up" style="--d:.18s">
-          <button class="faq-q">Do you work with startups and established businesses? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Both. From pre-seed MVPs to scaling companies refining their funnel — we tailor to your stage.</p></div>
-        </div>
-        <div class="faq-item reveal" data-anim="up" style="--d:.24s">
-          <button class="faq-q">How do we get started? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Reach out via the contact form. We'll book a discovery call and scope a plan within 48 hours.</p></div>
-        </div>
+        <div class="faq-item reveal" data-anim="up"><button class="faq-q"><span class="plus">+</span> What services do you offer exactly?</button><div class="faq-a"><p>UI/UX design, graphic design, web development and app development — strategy through launch, all under one roof.</p></div></div>
+        <div class="faq-item reveal" data-anim="up" style="--d:.06s"><button class="faq-q"><span class="plus">+</span> How do you ensure the designs actually convert?</button><div class="faq-a"><p>Every decision maps to a metric. We research, prototype, test and iterate against real user behaviour — not just aesthetics.</p></div></div>
+        <div class="faq-item reveal" data-anim="up" style="--d:.12s"><button class="faq-q"><span class="plus">+</span> How long does a typical project take?</button><div class="faq-a"><p>Landing pages run 1–3 weeks; full products 6–12 weeks depending on scope and complexity.</p></div></div>
+        <div class="faq-item reveal" data-anim="up" style="--d:.18s"><button class="faq-q"><span class="plus">+</span> Do you work with startups or only established businesses?</button><div class="faq-a"><p>Both. From pre-seed MVPs to scaling companies refining their funnel — we tailor to your stage.</p></div></div>
+        <div class="faq-item reveal" data-anim="up" style="--d:.24s"><button class="faq-q"><span class="plus">+</span> How do we get started?</button><div class="faq-a"><p>Reach out via the contact form. We'll book a discovery call and scope a plan within 48 hours.</p></div></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA / CONTACT ================= -->
-  <section class="cta-section" id="contact">
-    <div class="container center">
-      <h2 class="cta-title reveal" data-anim="up">Let's Turn Your Traffic<br>Into <em>Revenue.</em></h2>
-      <a class="btn btn-accent btn-lg reveal" data-anim="up" style="--d:.15s" href="mailto:hello@frolab.studio">Get In Touch <span class="arrow">↗</span></a>
     </div>
   </section>
 
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a class="logo" href="#top"><span class="logo-mark"></span><span class="logo-word">Frolab</span></a>
-      <p>Creative design &amp; development studio. Less noise, more impact. Est. 2020.</p>
+<footer class="footer" id="contact">
+  <div class="container footer-top">
+    <div class="footer-col">
+      <h4>Discover</h4>
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#process">Team</a><a href="#faq">Blog</a><a href="#contact">Career</a><a href="#contact">Contact</a>
     </div>
-    <div class="footer-cols">
-      <div><h4>Studio</h4><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a></div>
-      <div><h4>Social</h4><a href="#">Dribbble</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a></div>
-      <div><h4>Contact</h4><a href="mailto:hello@frolab.studio">hello@frolab.studio</a><a href="#">+880 1322 635808</a></div>
+    <div class="footer-col">
+      <h4>Follow our work</h4>
+      <a href="#">Dribbble</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a>
     </div>
+    <a class="whatsapp-card" href="https://wa.me/8801322635808">
+      <span class="wa-top"><span class="wa-ico">✆</span> Instant Conversation</span>
+      <span class="wa-bottom">Whatsapp <span class="arrow">↗</span></span>
+    </a>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Frolab. Recreated study build.</span>
-    <span>Privacy Policy · Terms &amp; Conditions</span>
+    <a class="logo light" href="#top"><span class="slash">//</span> FROLAB</a>
+    <span class="legal">Privacy Policy &nbsp;&bull;&nbsp; Terms &amp; Conditions</span>
+    <span class="copy">© 2026 Frolab. All rights reserved.</span>
   </div>
 </footer>
 
