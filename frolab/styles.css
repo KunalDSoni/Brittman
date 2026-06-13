@@ -118,9 +118,10 @@ a{ color:inherit; }
    so only the entrance opacity is transitioned here */
 .hero-media{ position:relative; border-radius:26px; overflow:hidden; transform-origin:center; will-change:transform; }
 .hero-media.reveal{ transition-property:opacity; }
-.hero-media img{ width:100%; aspect-ratio:16/8.2; object-fit:cover; }
-.play{ position:absolute; inset:0; margin:auto; width:84px; height:84px; border-radius:50%; border:0; cursor:pointer; background:rgba(18,18,18,.55); color:#fff; font-size:1.3rem; backdrop-filter:blur(4px); transition:transform .35s var(--ease), background .35s var(--ease); }
+.hero-media img,.hero-media video{ width:100%; aspect-ratio:16/8.2; object-fit:cover; display:block; }
+.play{ position:absolute; right:18px; bottom:18px; width:54px; height:54px; border-radius:50%; border:0; cursor:pointer; background:rgba(18,18,18,.55); color:#fff; font-size:.9rem; backdrop-filter:blur(6px); transition:transform .35s var(--ease), background .35s var(--ease); }
 .play:hover{ transform:scale(1.08); background:var(--coral); color:#111; }
+.play.is-paused{ font-size:1rem; }
 
 /* ================= CENTER BAND (Less Noise) ================= */
 .center-band{ text-align:center; padding:120px 0 70px; }

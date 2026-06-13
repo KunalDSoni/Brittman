@@ -164,19 +164,24 @@
     apply();
   }
 
-  /* ---------- showreel modal ---------- */
-  const play = document.querySelector('.play');
-  if (play) {
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.innerHTML = `<div class="modal-inner"><button class="modal-close" aria-label="Close">✕</button>
-      <div class="modal-media"><img src="${play.dataset.poster || './assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg'}" alt="Showreel still">
-      <span class="modal-note">Showreel placeholder — original video not bundled in this study build.</span></div></div>`;
-    document.body.appendChild(modal);
-    const closeM = () => modal.classList.remove('open');
-    play.addEventListener('click', () => modal.classList.add('open'));
-    modal.addEventListener('click', (e) => { if (e.target === modal || e.target.closest('.modal-close')) closeM(); });
-    document.addEventListener('keydown', (e) => e.key === 'Escape' && closeM());
+  /* ---------- hero video play / pause toggle ---------- */
+  const heroVideo = document.getElementById('heroVideo');
+  const playToggle = document.getElementById('heroPlayToggle');
+  if (heroVideo && playToggle) {
+    const sync = () => {
+      const paused = heroVideo.paused;
+      playToggle.textContent = paused ? '▶' : '❚❚';
+      playToggle.classList.toggle('is-paused', paused);
+      playToggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+    };
+    playToggle.addEventListener('click', () => {
+      heroVideo.paused ? heroVideo.play() : heroVideo.pause();
+    });
+    heroVideo.addEventListener('play', sync);
+    heroVideo.addEventListener('pause', sync);
+    // some browsers block autoplay until interaction — keep the poster usable
+    heroVideo.play().catch(() => {});
+    sync();
   }
 
   /* ---------- contact form ---------- */

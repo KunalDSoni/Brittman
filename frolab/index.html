@@ -45,8 +45,11 @@
     <!-- hero showreel image -->
     <div class="container">
       <div class="hero-media reveal" data-anim="fade" id="heroMedia">
-        <img src="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg" alt="Frolab team at work" />
-        <button class="play" data-poster="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg" aria-label="Play showreel">▶</button>
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+               poster="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg">
+          <source src="./assets/video/hero.mp4" type="video/mp4" />
+        </video>
+        <button class="play" id="heroPlayToggle" aria-label="Pause video">❚❚</button>
       </div>
     </div>
   </section>
