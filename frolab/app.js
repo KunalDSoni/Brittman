@@ -1,0 +1,177 @@
+/* =========================================================
+   FROLAB study build — shared layout + interactions
+   Injects header/menu/footer on every page so they stay
+   consistent, then wires all interactions.
+   ========================================================= */
+(function () {
+  'use strict';
+
+  const PAGE = document.body.dataset.page || 'home';
+  const NAV = [
+    ['Work', 'work.html'], ['Services', 'services.html'], ['About', 'about.html'],
+    ['Team', 'team.html'], ['Blog', 'blog.html'], ['Career', 'career.html'], ['Contact', 'contact.html'],
+  ];
+  const active = (href) => href.split('.')[0] === PAGE ? ' aria-current="page"' : '';
+
+  /* ---------- HEADER ---------- */
+  const headerHTML = `
+    <header class="nav" id="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html" aria-label="Frolab home"><span class="slash">//</span> FROLAB</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </header>
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+      <button class="menu-close" id="menuClose" aria-label="Close menu">✕</button>
+      <nav class="menu-links">
+        ${NAV.map(([l, h]) => `<a href="${h}"${active(h)}>${l}</a>`).join('')}
+      </nav>
+    </div>`;
+
+  /* ---------- FOOTER ---------- */
+  const footerHTML = `
+    <footer class="footer">
+      <div class="container footer-top">
+        <div class="footer-col">
+          <h4>Discover</h4>
+          ${NAV.map(([l, h]) => `<a href="${h}">${l}</a>`).join('')}
+        </div>
+        <div class="footer-col">
+          <h4>Follow our work</h4>
+          <a href="#">Dribbble</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a>
+        </div>
+        <a class="whatsapp-card" href="https://wa.me/8801322635808" target="_blank" rel="noopener">
+          <span class="wa-top"><span class="wa-ico">✆</span> Instant Conversation</span>
+          <span class="wa-bottom">Whatsapp <span class="arrow">↗</span></span>
+        </a>
+      </div>
+      <div class="container footer-bottom">
+        <a class="logo light" href="index.html"><span class="slash">//</span> FROLAB</a>
+        <span class="legal">Privacy Policy &nbsp;&bull;&nbsp; Terms &amp; Conditions</span>
+        <span class="copy">© 2026 Frolab. Study recreation.</span>
+      </div>
+    </footer>`;
+
+  /* ---------- STUDY BADGE ---------- */
+  const badgeHTML = `
+    <div class="study-badge" id="studyBadge">
+      <span>Study recreation — not affiliated with Frolab</span>
+      <button aria-label="Dismiss">✕</button>
+    </div>`;
+
+  const hMount = document.getElementById('site-header');
+  const fMount = document.getElementById('site-footer');
+  if (hMount) hMount.innerHTML = headerHTML;
+  if (fMount) fMount.innerHTML = footerHTML;
+  document.body.insertAdjacentHTML('beforeend', badgeHTML);
+
+  /* ---------- sticky condensing nav ---------- */
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- menu overlay ---------- */
+  const overlay = document.getElementById('menuOverlay');
+  const openMenu = () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const closeMenu = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; };
+  document.getElementById('menuBtn')?.addEventListener('click', openMenu);
+  document.getElementById('menuClose')?.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu());
+
+  /* ---------- study badge dismiss ---------- */
+  const badge = document.getElementById('studyBadge');
+  if (sessionStorage.getItem('hideStudyBadge')) badge.style.display = 'none';
+  badge.querySelector('button').addEventListener('click', () => {
+    badge.style.display = 'none'; sessionStorage.setItem('hideStudyBadge', '1');
+  });
+
+  /* ---------- seamless tickers + testimonial columns ---------- */
+  document.querySelectorAll('.ticker-track, .testi-col').forEach((track) => {
+    [...track.children].forEach((c) => track.appendChild(c.cloneNode(true)));
+  });
+
+  /* ---------- scroll reveal ---------- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach((el) => io.observe(el));
+  } else reveals.forEach((el) => el.classList.add('in'));
+
+  /* ---------- stat count-up ---------- */
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  function countUp(el) {
+    const target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '', dur = 1500;
+    let start = null;
+    (function frame(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / dur, 1);
+      el.textContent = Math.round(easeOut(p) * target) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    })(performance.now());
+  }
+  if ('IntersectionObserver' in window) {
+    const sIO = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => { if (e.isIntersecting) { countUp(e.target); obs.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('[data-count]').forEach((el) => sIO.observe(el));
+  }
+
+  /* ---------- generic accordions (FAQ + awards) ---------- */
+  function wireAccordion(selector, itemSel, panelSel) {
+    document.querySelectorAll(selector).forEach((item) => {
+      const trigger = item.querySelector(itemSel);
+      const panel = panelSel ? item.querySelector(panelSel) : null;
+      trigger.addEventListener('click', () => {
+        const open = item.classList.contains('open');
+        item.parentElement.querySelectorAll('.open').forEach((o) => {
+          o.classList.remove('open');
+          const p = o.querySelector(panelSel);
+          if (p) p.style.maxHeight = null;
+        });
+        if (!open) {
+          item.classList.add('open');
+          if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+  wireAccordion('.faq-item', '.faq-q', '.faq-a');
+  wireAccordion('.aw', 'button', null); // awards use CSS max-height on .open
+
+  /* ---------- showreel modal ---------- */
+  const play = document.querySelector('.play');
+  if (play) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `<div class="modal-inner"><button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-media"><img src="${play.dataset.poster || './assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg'}" alt="Showreel still">
+      <span class="modal-note">Showreel placeholder — original video not bundled in this study build.</span></div></div>`;
+    document.body.appendChild(modal);
+    const closeM = () => modal.classList.remove('open');
+    play.addEventListener('click', () => modal.classList.add('open'));
+    modal.addEventListener('click', (e) => { if (e.target === modal || e.target.closest('.modal-close')) closeM(); });
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && closeM());
+  }
+
+  /* ---------- contact form ---------- */
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let ok = true;
+      form.querySelectorAll('[required]').forEach((f) => {
+        const bad = !f.value.trim() || (f.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
+        f.classList.toggle('invalid', bad);
+        if (bad) ok = false;
+      });
+      if (!ok) return;
+      form.innerHTML = `<div class="form-success"><span class="check">✓</span>
+        <h3>Thanks — message sent.</h3><p>This is a study build, so nothing is actually transmitted. In the real site we'd reply within 48 hours.</p></div>`;
+    });
+    form.querySelectorAll('input,textarea').forEach((f) =>
+      f.addEventListener('input', () => f.classList.remove('invalid')));
+  }
+})();

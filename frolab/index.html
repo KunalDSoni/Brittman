@@ -12,29 +12,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="./styles.css" />
 </head>
-<body id="top">
+<body id="top" data-page="home">
 
-<!-- ================= HEADER ================= -->
-<header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a class="logo" href="#top" aria-label="Frolab home"><span class="slash">//</span> FROLAB</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
-  </div>
-</header>
-
-<!-- fullscreen menu overlay -->
-<div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-  <button class="menu-close" id="menuClose" aria-label="Close menu">✕</button>
-  <nav class="menu-links">
-    <a href="#work">Work</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#process">Team</a>
-    <a href="#faq">Blog</a>
-    <a href="#contact">Career</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</div>
+<div id="site-header"></div>
 
 <main>
 
@@ -44,7 +24,7 @@
       <span class="eyebrow reveal" data-anim="fade">&bull;&nbsp;&nbsp;Growth Design Studio&nbsp;&nbsp;&bull;</span>
       <h1 class="hero-title reveal" data-anim="up" style="--d:.05s">We Turn Traffic<br>Into Revenue</h1>
       <p class="hero-sub reveal" data-anim="up" style="--d:.18s">We design digital experiences that don't just look good — they drive action, increase conversions, and scale with your business.</p>
-      <a class="btn btn-dark reveal" data-anim="up" style="--d:.28s" href="#contact">Get In Touch <span class="arrow-circle">↗</span></a>
+      <a class="btn btn-dark reveal" data-anim="up" style="--d:.28s" href="contact.html">Get In Touch <span class="arrow-circle">↗</span></a>
     </div>
 
     <!-- logo ticker -->
@@ -66,7 +46,7 @@
     <div class="container">
       <div class="hero-media reveal" data-anim="up">
         <img src="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg" alt="Frolab team at work" />
-        <button class="play" aria-label="Play showreel">▶</button>
+        <button class="play" data-poster="./assets/images/GaCGPUQAxkKSrOXWLISaBVxjUWU.jpg" aria-label="Play showreel">▶</button>
       </div>
     </div>
   </section>
@@ -175,7 +155,7 @@
             </div>
             <div><b>16K+</b><span>Clients served</span></div>
           </div>
-          <a class="btn btn-dark" href="#contact">Contact Us <span class="arrow-circle">↗</span></a>
+          <a class="btn btn-dark" href="contact.html">Contact Us <span class="arrow-circle">↗</span></a>
         </div>
       </div>
     </div>
@@ -306,29 +286,8 @@
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer" id="contact">
-  <div class="container footer-top">
-    <div class="footer-col">
-      <h4>Discover</h4>
-      <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#process">Team</a><a href="#faq">Blog</a><a href="#contact">Career</a><a href="#contact">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Follow our work</h4>
-      <a href="#">Dribbble</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a>
-    </div>
-    <a class="whatsapp-card" href="https://wa.me/8801322635808">
-      <span class="wa-top"><span class="wa-ico">✆</span> Instant Conversation</span>
-      <span class="wa-bottom">Whatsapp <span class="arrow">↗</span></span>
-    </a>
-  </div>
-  <div class="container footer-bottom">
-    <a class="logo light" href="#top"><span class="slash">//</span> FROLAB</a>
-    <span class="legal">Privacy Policy &nbsp;&bull;&nbsp; Terms &amp; Conditions</span>
-    <span class="copy">© 2026 Frolab. All rights reserved.</span>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
-<script src="./script.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
