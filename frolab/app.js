@@ -141,6 +141,29 @@
   wireAccordion('.faq-item', '.faq-q', '.faq-a');
   wireAccordion('.aw', 'button', null); // awards use CSS max-height on .open
 
+  /* ---------- scroll-linked hero zoom ----------
+     Mirrors the live site: the hero video scales with scroll position.
+     It eases up to a peak as the media reaches the viewport centre,
+     then eases back down as it scrolls away ("zoom, then close"). */
+  const heroMedia = document.getElementById('heroMedia');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroMedia && !reduceMotion) {
+    const BASE = 0.90, PEAK = 1.05, SPREAD = 0.92; // SPREAD in viewport-height units
+    let ticking = false;
+    const apply = () => {
+      const r = heroMedia.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const d = (r.top + r.height / 2 - vh / 2) / vh;          // 0 when centred
+      const f = Math.max(0, 1 - Math.pow(d / SPREAD, 2));      // 1 at centre → 0 at edges
+      heroMedia.style.transform = 'scale(' + (BASE + (PEAK - BASE) * f).toFixed(4) + ')';
+      ticking = false;
+    };
+    const onScrollZoom = () => { if (!ticking) { ticking = true; requestAnimationFrame(apply); } };
+    window.addEventListener('scroll', onScrollZoom, { passive: true });
+    window.addEventListener('resize', onScrollZoom);
+    apply();
+  }
+
   /* ---------- showreel modal ---------- */
   const play = document.querySelector('.play');
   if (play) {

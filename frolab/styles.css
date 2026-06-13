@@ -114,8 +114,10 @@ a{ color:inherit; }
 .ticker-track li:hover img{ opacity:1; }
 @keyframes ticker{ to{ transform:translateX(-50%); } }
 
-/* hero media */
-.hero-media{ position:relative; border-radius:26px; overflow:hidden; }
+/* hero media — scroll-linked zoom is driven by JS (transform),
+   so only the entrance opacity is transitioned here */
+.hero-media{ position:relative; border-radius:26px; overflow:hidden; transform-origin:center; will-change:transform; }
+.hero-media.reveal{ transition-property:opacity; }
 .hero-media img{ width:100%; aspect-ratio:16/8.2; object-fit:cover; }
 .play{ position:absolute; inset:0; margin:auto; width:84px; height:84px; border-radius:50%; border:0; cursor:pointer; background:rgba(18,18,18,.55); color:#fff; font-size:1.3rem; backdrop-filter:blur(4px); transition:transform .35s var(--ease), background .35s var(--ease); }
 .play:hover{ transform:scale(1.08); background:var(--coral); color:#111; }
