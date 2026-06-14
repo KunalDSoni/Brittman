@@ -127,8 +127,9 @@ a{ color:inherit; }
 .center-band{ text-align:center; padding:120px 0 70px; }
 
 /* ================= OUTCOMES dark block ================= */
-.outcomes{ background:var(--dark); color:#fafafa; border-radius:30px; padding:54px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
-.outcomes-copy p{ color:rgba(255,255,255,.6); margin:22px 0 30px; max-width:42ch; }
+.outcomes{ background:var(--bg-soft); color:var(--ink); border:1px solid var(--line); border-radius:30px; padding:54px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.outcomes .h2.light{ color:var(--ink); }
+.outcomes-copy p{ color:var(--muted); margin:22px 0 30px; max-width:42ch; }
 .outcomes-media img{ width:100%; border-radius:18px; aspect-ratio:16/11; object-fit:cover; }
 
 /* ================= STATS ================= */
@@ -208,7 +209,9 @@ a{ color:inherit; }
 .testi figcaption span{ color:var(--muted); font-size:.82rem; }
 
 /* ================= AWARDS (dark) ================= */
-.awards-band{ background:var(--dark); color:#fafafa; padding:90px 0; border-radius:30px; margin:0 4vw; }
+.awards-band{ background:var(--bg-soft); color:var(--ink); padding:90px 0; border-radius:30px; margin:0 4vw; }
+.awards-band .h2.light{ color:var(--ink); }
+.awards-band .sub.light{ color:var(--muted); }
 .awards-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
 .awards-acc{ list-style:none; display:flex; flex-direction:column; gap:14px; }
 .aw{ border-radius:16px; overflow:hidden; color:#1a1a1a; }
