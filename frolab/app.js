@@ -1,5 +1,5 @@
 /* =========================================================
-   FROLAB study build — shared layout + interactions
+   BRITTMAN site — shared layout + interactions
    Injects header/menu/footer on every page so they stay
    consistent, then wires all interactions.
    ========================================================= */
@@ -8,8 +8,8 @@
 
   const PAGE = document.body.dataset.page || 'home';
   const NAV = [
-    ['Work', 'work.html'], ['Services', 'services.html'], ['About', 'about.html'],
-    ['Team', 'team.html'], ['Blog', 'blog.html'], ['Career', 'career.html'], ['Contact', 'contact.html'],
+    ['Services', 'services.html'], ['Industries', 'work.html'], ['About', 'about.html'],
+    ['Leadership', 'team.html'], ['Insights', 'blog.html'], ['Careers', 'career.html'], ['Contact', 'contact.html'],
   ];
   const active = (href) => href.split('.')[0] === PAGE ? ' aria-current="page"' : '';
 
@@ -17,7 +17,7 @@
   const headerHTML = `
     <header class="nav" id="nav">
       <div class="container nav-inner">
-        <a class="logo" href="index.html" aria-label="Frolab home"><span class="slash">//</span> FROLAB</a>
+        <a class="logo" href="index.html" aria-label="Brittman home"><span class="slash">//</span> BRITTMAN</a>
         <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
       </div>
     </header>
@@ -33,29 +33,31 @@
     <footer class="footer">
       <div class="container footer-top">
         <div class="footer-col">
-          <h4>Discover</h4>
+          <h4>Company</h4>
           ${NAV.map(([l, h]) => `<a href="${h}">${l}</a>`).join('')}
         </div>
         <div class="footer-col">
-          <h4>Follow our work</h4>
-          <a href="#">Dribbble</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a>
+          <h4>Get in touch</h4>
+          <a href="mailto:info@brittman.com">info@brittman.com</a>
+          <a href="tel:+912265300998">+91 22 6530 0998</a>
+          <a href="https://www.linkedin.com/company/brittman-utilities-&-services-pvt-ltd-" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <a class="whatsapp-card" href="https://wa.me/8801322635808" target="_blank" rel="noopener">
-          <span class="wa-top"><span class="wa-ico">✆</span> Instant Conversation</span>
-          <span class="wa-bottom">Whatsapp <span class="arrow">↗</span></span>
+        <a class="whatsapp-card" href="contact.html">
+          <span class="wa-top"><span class="wa-ico">✦</span> Talk to our workforce team</span>
+          <span class="wa-bottom">Request a Consultation <span class="arrow">↗</span></span>
         </a>
       </div>
       <div class="container footer-bottom">
-        <a class="logo light" href="index.html"><span class="slash">//</span> FROLAB</a>
+        <a class="logo light" href="index.html"><span class="slash">//</span> BRITTMAN</a>
         <span class="legal">Privacy Policy &nbsp;&bull;&nbsp; Terms &amp; Conditions</span>
-        <span class="copy">© 2026 Frolab. Study recreation.</span>
+        <span class="copy">© 2026 Brittman Utilities &amp; Services Pvt. Ltd. All rights reserved.</span>
       </div>
     </footer>`;
 
   /* ---------- STUDY BADGE ---------- */
   const badgeHTML = `
     <div class="study-badge" id="studyBadge">
-      <span>Study recreation — not affiliated with Frolab</span>
+      <span>Demo build — design template adapted, content for Brittman</span>
       <button aria-label="Dismiss">✕</button>
     </div>`;
 
@@ -197,7 +199,7 @@
       });
       if (!ok) return;
       form.innerHTML = `<div class="form-success"><span class="check">✓</span>
-        <h3>Thanks — message sent.</h3><p>This is a study build, so nothing is actually transmitted. In the real site we'd reply within 48 hours.</p></div>`;
+        <h3>Thank you — your enquiry has been received.</h3><p>A member of the Brittman team will get back to you shortly. For urgent requirements, email info@brittman.com.</p></div>`;
     });
     form.querySelectorAll('input,textarea').forEach((f) =>
       f.addEventListener('input', () => f.classList.remove('invalid')));
