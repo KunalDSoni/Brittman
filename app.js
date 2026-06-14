@@ -54,18 +54,10 @@
       </div>
     </footer>`;
 
-  /* ---------- STUDY BADGE ---------- */
-  const badgeHTML = `
-    <div class="study-badge" id="studyBadge">
-      <span>Demo build — design template adapted, content for Brittman</span>
-      <button aria-label="Dismiss">✕</button>
-    </div>`;
-
   const hMount = document.getElementById('site-header');
   const fMount = document.getElementById('site-footer');
   if (hMount) hMount.innerHTML = headerHTML;
   if (fMount) fMount.innerHTML = footerHTML;
-  document.body.insertAdjacentHTML('beforeend', badgeHTML);
 
   /* ---------- sticky condensing nav ---------- */
   const nav = document.getElementById('nav');
@@ -80,13 +72,6 @@
   document.getElementById('menuBtn')?.addEventListener('click', openMenu);
   document.getElementById('menuClose')?.addEventListener('click', closeMenu);
   document.addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu());
-
-  /* ---------- study badge dismiss ---------- */
-  const badge = document.getElementById('studyBadge');
-  if (sessionStorage.getItem('hideStudyBadge')) badge.style.display = 'none';
-  badge.querySelector('button').addEventListener('click', () => {
-    badge.style.display = 'none'; sessionStorage.setItem('hideStudyBadge', '1');
-  });
 
   /* ---------- seamless tickers + testimonial columns ---------- */
   document.querySelectorAll('.ticker-track, .testi-col').forEach((track) => {
